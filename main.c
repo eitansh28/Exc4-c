@@ -12,7 +12,7 @@ int main(){
   char choose;
   pnode* head=&Graph;
 
- while(scanf("%c",&choose)!='v'){
+ while(scanf("%c",&choose)!=EOF){
    if(choose=='A'){
      deleteGraph(head);
      int numOfNodes=0;
@@ -66,9 +66,9 @@ int main(){
            printf(" %d\n",ans);
          }else if(choose=='T'){
            tsp(*head);
-         }else if(choose=='\n'){
+         }else if(choose=='\n' || choose==EOF){
            deleteGraph(head);
            return 0;
          }
-       }
+       }return 0;
      }
