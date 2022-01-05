@@ -7,16 +7,10 @@
 
 
 int main(){
-  //int x,y;
+
   pnode Graph = NULL;
-  // Graph =  (pnode) calloc (sizeof(node),1);
-  // if(!Graph){
-  //   return 0;
-  // }
-
-
-    char choose;
-    pnode* head=&Graph;
+  char choose;
+  pnode* head=&Graph;
 
  while(scanf("%c",&choose)!='v'){
    if(choose=='A'){
@@ -42,7 +36,6 @@ int main(){
          scanf("%d",&a);
          pnode Nnode=g(a,*head);
          if(Nnode==NULL){
-           //printf("-is-");
            insertNodeLast(a,head);
           }
          else{
@@ -79,40 +72,3 @@ int main(){
          }
        }
      }
-
-
-
-//   while(scanf("%c",&choose) != 0){
-//
-//
-//     switch (choose){
-//
-//       case 'A':
-//         makeGraph(&Graph);
-//         //printGraph_cmd(Graph);
-//         break;
-//
-//       case 'B':
-//         //printf("nvnvnv");
-//         addnode(&Graph);
-//         //printGraph_cmd(Graph);
-//         break;
-//
-//       case 'D':
-//         scanf(" %d",&x);
-//         deletenode(x,&Graph);
-//         //printGraph_cmd(Graph);
-//         break;
-//
-//       case 'S':
-//         scanf(" %d %d",&x, &y);
-//         shortPath(x,y,Graph);
-//         break;
-//
-//       case 'T':
-//         //scanf(" %d %d",&x, &y);
-//         tsp(Graph);
-//         break;
-//       }
-//   }return 0;
-// }

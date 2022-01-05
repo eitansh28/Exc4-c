@@ -4,11 +4,8 @@
 
 void deleteEdge(int id, pedge* first);
 void deleteEdge2(pedge* first);
-// typedef struct GRAPH_NODE_ {
-//     int node_num;
-//     pedge edges;
-//     struct GRAPH_NODE_ *next;
-// } node, *pnode;
+
+
 pnode g(int key,pnode head){
   pnode temp=head;
   while(temp){
@@ -48,7 +45,6 @@ void addnode(pnode *head){
   scanf("%d",&a);
   pnode Nnode=g(a,*head);
   if(Nnode==NULL){
-    //printf("-is-");
     insertNodeLast(a,head);
    }
   else{

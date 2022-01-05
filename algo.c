@@ -412,9 +412,9 @@ void sumPer(int* arr,int len,pnode head){
     int sum=0;
     //printf(" %d \n",minTSP);
     for(int i=0;i<len;i++){
-        // if(shortPath(arr[i],arr[i+1],head)<0){
-        //   return;
-        // }
+        if(shortPath(arr[i],arr[i+1],head)<0){
+          return;
+         }
         //printf(" %d \n",shortPath(arr[i],arr[i+1],head));
         sum+=shortPath(arr[i],arr[i+1],head);
     }if(sum<minTSP&&sum>=0){
@@ -455,6 +455,9 @@ void tsp(pnode head){
         scanf("%d",&arr[i]);
         //printf("%d",arr[i]);
     }permutation(arr,0,size-1,head);
+    if(minTSP==0){
+      minTSP=-1;
+    }
     printf("TSP shortest path: %d\n",minTSP);
     minTSP=24141;
 
