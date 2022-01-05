@@ -63,7 +63,7 @@ int main(){
            scanf("%d",&y);
            int ans=dijikstra(x,y,*head);
            printf("Dijsktra shortest path:");
-           printf(" %d\n",ans);
+           printf(" %d \n",ans);
          }else if(choose=='T'){
            tsp(*head);
          }else if(choose=='\n' || choose==EOF){
