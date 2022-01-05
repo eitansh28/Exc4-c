@@ -9,10 +9,10 @@
 int main(){
   //int x,y;
   pnode Graph = NULL;
-  Graph =  (pnode) calloc (sizeof(node),1);
-  if(!Graph){
-    return 0;
-  }
+  // Graph =  (pnode) calloc (sizeof(node),1);
+  // if(!Graph){
+  //   return 0;
+  // }
 
 
     char choose;
@@ -20,11 +20,11 @@ int main(){
 
  while(scanf("%c",&choose)!='v'){
    if(choose=='A'){
-     //deleteGraph(head);
+     deleteGraph(head);
      int numOfNodes=0;
      scanf("%d",&numOfNodes);
      *head=newNode(0);
-     for(int i=0;i<numOfNodes;i++){
+     for(int i=1;i<numOfNodes;i++){
        insertNodeLast(i,head);
      }
      }else if(choose=='n'){
@@ -38,9 +38,27 @@ int main(){
            addEdge(&(currnode->edges),a,weight);
          }
        }else if(choose=='B'){
+         int a,dest,weight;
+         scanf("%d",&a);
+         pnode Nnode=g(a,*head);
+         if(Nnode==NULL){
+           //printf("-is-");
+           insertNodeLast(a,head);
+          }
+         else{
+           pnode ite=g(a,*head);
+           deleteEdge2(&(ite->edges));
+         }
+         pnode c;
+         pnode t=g(a,*head);
+         while(scanf("%d",&dest)!=0 && scanf("%d",&weight)!=0){
+           c=g(dest,*head);
+           addEdge(&(t->edges),c,weight);
            //printGraph_cmd(*head);
-           addnode(head);
+         }
            //printGraph_cmd(*head);
+           // addnode(head);
+           // printGraph_cmd(*head);
          }else if(choose=='D'){
            int x;
            scanf("%d",&x);
@@ -50,13 +68,13 @@ int main(){
            int x,y;
            scanf("%d",&x);
            scanf("%d",&y);
-           //int ans=dijikstra(x,y,*head);
+           int ans=dijikstra(x,y,*head);
            printf("Dijsktra shortest path:");
-           //printf("%d\n",ans);
+           printf(" %d\n",ans);
          }else if(choose=='T'){
            tsp(*head);
          }else if(choose=='\n'){
-           //deleteGraph(head);
+           deleteGraph(head);
            return 0;
          }
        }

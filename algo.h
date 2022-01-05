@@ -29,5 +29,5 @@ void makeGraph(pnode *head);
 void printGraph_cmd(pnode head);
 void deleteGraph(pnode* head);
 int dijikstra(int x, int y ,pnode head);
-void shortPath(int x, int y, pnode head);
+int shortPath(int x, int y, pnode head);
 void tsp(pnode head);
